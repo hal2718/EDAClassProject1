@@ -3,6 +3,9 @@
 d<-read.table("household_power_consumption.txt",sep=";",header=TRUE,as.is=TRUE)
 h<-subset(d,Date=="1/2/2007"|Date=="2/2/2007")
 rm(d)
+m<-paste(h[,1],h[,2])
+v<-as.POSIXlt(m,format="%d/%m/%Y %H:%M:%S")
+
 #...............................
 h[,7]<-as.numeric(h[,7])
 h[,8]<-as.numeric(h[,8])
